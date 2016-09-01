@@ -15,7 +15,7 @@ public class TourJoueur {
 		grilleJoueur.afficherGrille();
 
 		int[] cood = demanderCoordonnees();
-		grilleIa.tirer(cood[0], cood[1]);
+		grilleIa.tirer(cood[1], cood[0]);
 		
 		grilleIa.afficherGrille();
 		System.out.println();
@@ -35,7 +35,7 @@ public class TourJoueur {
 
 		if (mess.length() == 2 && estLettre(mess.charAt(0)) && estChiffre(mess.charAt(1))) {
 
-			coordo[0] = mess.charAt(0) - 97;
+			coordo[0] = mess.charAt(0) - 65;
 			coordo[1] = mess.charAt(1) - 48;
 			System.out.println("Tir !");
 		} else {
@@ -48,7 +48,7 @@ public class TourJoueur {
 
 	private boolean estLettre(char lettre) {
 
-		if (lettre >= 97 && lettre <= 106) {
+		if (lettre >= 65 && lettre <= 74) {
 			return true;
 		}
 		return false;
