@@ -2,7 +2,7 @@
 public class Case {
 	
 	static Case EAU = new Case("   ");
-	static Case BATEAU = new Case("B");
+	static Case BATEAU = new Case(" B ");
 	
 	private String affichage; 
 	

@@ -15,13 +15,27 @@ public class Grille {
 	
 	public void afficherGrille(){
 		
+		System.out.print("  ");
+		
 		for (int i = 0; i < cases.length; i++) {
+			System.out.print("  ");
+			System.out.print((char)('A'+ i));
+			System.out.print(" ");
+			
+		}
+		System.out.print("\n");
+		for (int j = 0; j < 43; j++) {
+			System.out.print("-");
+		}
+		System.out.print("\n");
+		for (int i = 0; i < cases.length; i++) {
+			System.out.print(i + " ");
 			for (int j = 0; j < cases.length; j++) {
 				System.out.print("|");
 				System.out.print(cases[i][j].getAffichage());
 			}
 			System.out.println("|");
-			for (int j = 0; j < 41; j++) {
+			for (int j = 0; j < 43; j++) {
 				System.out.print("-");
 			}
 			System.out.print("\n");
