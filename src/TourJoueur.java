@@ -38,7 +38,7 @@ public class TourJoueur {
 
 	private boolean estLettre(char lettre) {
 
-		if (lettre >= 97 && lettre <= 122) {
+		if (lettre >= 97 && lettre <= 106) {
 			return true;
 		}
 		return false;
