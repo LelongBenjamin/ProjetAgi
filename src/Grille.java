@@ -63,7 +63,7 @@ public class Grille {
 		return true;
 	}
 	
-	public void afficherGrille(){
+	public void afficherGrille(boolean bateau){
 		
 		System.out.print("  ");
 		
@@ -82,7 +82,11 @@ public class Grille {
 			System.out.print(i + " ");
 			for (int j = 0; j < cases.length; j++) {
 				System.out.print("|");
-				System.out.print(cases[i][j].getAffichage());
+				if(cases[i][j] == Case.BATEAU && !bateau){
+					System.out.print(Case.EAU.getAffichage());
+				}else{
+					System.out.print(cases[i][j].getAffichage());
+				}
 			}
 			System.out.println("|");
 			for (int j = 0; j < 43; j++) {
