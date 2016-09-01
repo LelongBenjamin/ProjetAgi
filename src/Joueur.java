@@ -54,7 +54,6 @@ public class Joueur {
 		this.vies = nombreDeVies();
 		
 		Main.clearTerminal();
-		grille.afficherGrille();
 	}
 	
 	public boolean demanderOrientation(){
