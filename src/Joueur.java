@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Joueur {
@@ -7,25 +8,47 @@ public class Joueur {
 	private List<Bateau> listeBateau = new ArrayList<>();
 	private int vies;
 	
-	public Joueur(Grille grille) {
+	public Joueur(Grille grille, boolean ia) {
+		if(!ia){
+			int[] tab = new int[]{5,4,3,3,2};
 		
-		int[] tab = new int[]{5,4,3,3,2};
-		
-		for (int i = 0; i < tab.length; i++) {
-			boolean valide = false;
-			Bateau bato = null;
-			while(!valide){
-				Main.clearTerminal();
-				grille.afficherGrille();
-				System.out.print("Donnez les coordonnees pour le bateau de " + tab[i] + ": ");
-				int[] cood = TourJoueur.demanderCoordonnees();
-				boolean orientation = demanderOrientation();
+			for (int i = 0; i < tab.length; i++) {
+				boolean valide = false;
+				Bateau bato = null;
+				while(!valide){
+					Main.clearTerminal();
+					grille.afficherGrille();
+					System.out.print("Donnez les coordonnees pour le bateau de " + tab[i] + ": ");
+					int[] cood = TourJoueur.demanderCoordonnees();
+					boolean orientation = demanderOrientation();
 				
-				bato = new Bateau(tab[i], cood[1], cood[0], orientation);				
-				valide = grille.placerBateau(bato);
+					bato = new Bateau(tab[i], cood[1], cood[0], orientation);				
+					valide = grille.placerBateau(bato);
 				
+				}
+				listeBateau.add(bato);
 			}
-			listeBateau.add(bato);
+		}else{
+			int[] tab = new int[]{5,4,3,3,2};
+			
+			for (int i = 0; i < tab.length; i++) {
+				boolean valide = false;
+				Bateau bato = null;
+				while(!valide){
+					boolean orientation;
+					int[] cood = TourIa.coorAleatoires();
+					if(new Random().nextInt(2)==1){
+						orientation=true;
+					}else{
+						orientation = false;
+					}
+				
+					bato = new Bateau(tab[i], cood[1], cood[0], orientation);				
+					valide = grille.placerBateau(bato);
+				
+				}
+				listeBateau.add(bato);
+			}
 		}
 		
 		this.vies = nombreDeVies();

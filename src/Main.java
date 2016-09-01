@@ -7,8 +7,8 @@ public class Main {
 		Grille grilleJoueur = new Grille();
 		Grille grilleIa = new Grille();
 
-		Joueur joueur = new Joueur(grilleJoueur);
-		Joueur ordi = new Joueur(grilleIa);
+		Joueur joueur = new Joueur(grilleJoueur, false);
+		Joueur ordi = new Joueur(grilleIa, true);
 
 		int cpt = 0;
 
