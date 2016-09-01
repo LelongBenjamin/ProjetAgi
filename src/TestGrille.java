@@ -15,12 +15,5 @@ public class TestGrille {
 		}
 		
 	}
-	
-	@Test
-	public void testEntreeCoordonnees() {
-		
-		assertEquals(1,1);
-		
-	}
 
 }
