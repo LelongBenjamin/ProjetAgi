@@ -18,7 +18,10 @@ public class Joueur {
 				System.out.print("Donnez les coordonnees pour le bateau de " + tab[i] + ": ");
 				int[] cood = TourJoueur.demanderCoordonnees();
 				boolean orientation = demanderOrientation();
-				valide = grille.placerBateau(new Bateau(tab[i], cood[1], cood[0], orientation));
+				
+				Bateau bato = new Bateau(tab[i], cood[1], cood[0], orientation);				
+				valide = grille.placerBateau(bato);
+				listeBateau.add(bato);
 			}
 		}
 		Main.clearTerminal();
@@ -45,7 +48,7 @@ public class Joueur {
 	 * Nombre de vies du bateau
 	 * @return
 	 */
-	public int bateauAlive() {
+	public int nombreDeVies() {
 		int total = 0;
 		for (int i = 0; i < this.listeBateau.size(); i++) {
 			total += this.listeBateau.get(i).getTaille();

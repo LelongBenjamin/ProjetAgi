@@ -18,9 +18,9 @@ public class Main {
 			cpt = 1;
 		}
 
-		while (joueur.bateauAlive() >= 1 && ordi.bateauAlive() >= 1) {
+		while (joueur.nombreDeVies() >= 1 && ordi.nombreDeVies() >= 1) {
 
-			clearTerminal();
+			//clearTerminal();
 
 			if (cpt % 2 == 0) {
 				if (cpt == 2) {
