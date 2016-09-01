@@ -1,21 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Joueur {
 
-	private int bateauAliveJoueur=17;
-	private int nbBateauToucheJoueur;
+	private List<Bateau> listeBateau = new ArrayList<>();
 	
-	public int getBateauAlive() {
-		return bateauAliveJoueur;
-	}
-	public void setBateauAlive(int bateauAliveJoueur) {
-		this.bateauAliveJoueur = bateauAliveJoueur;
-	}
-	public int getNbBateauTouche() {
-		return nbBateauToucheJoueur;
-	}
-	public void setNbBateauTouche(int nbBateauToucheJoueur) {
-		this.nbBateauToucheJoueur = nbBateauToucheJoueur;
-	}
+	/**
+	 * Nombre de vies du bateau
+	 * @return
+	 */
+	public int bateauAlive() {
+		int total = 0;
+		for (int i = 0; i < this.listeBateau.size(); i++) {
+			total += this.listeBateau.get(i).getTaille();
+		}		
+		return total;
+	}	
 	
-	
+
 }
