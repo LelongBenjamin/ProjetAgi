@@ -33,8 +33,14 @@ public class Grille {
 	}
 	
 	public void placerBateau(Bateau bateau){
-		for (int i = 0; i < bateau.getTaille(); i++) {
-			cases[bateau.getX()][bateau.getY() + i] = Case.BATEAU;
+		if(!bateau.isOrientation()){
+			for (int i = 0; i < bateau.getTaille(); i++) {
+				cases[bateau.getX()][bateau.getY() + i] = Case.BATEAU;
+			}
+		}else{
+			for (int i = 0; i < bateau.getTaille(); i++) {
+				cases[bateau.getX() + i][bateau.getY()] = Case.BATEAU;
+			}
 		}
 	}
 	
