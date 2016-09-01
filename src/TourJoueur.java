@@ -4,7 +4,7 @@ public class TourJoueur {
 
 	public TourJoueur(Grille grilleJoueur, Grille grilleIa, Joueur joueur, Joueur advers) {
 		
-		grilleIa.afficherGrille();
+		grilleIa.afficherGrille(false);
 		System.out.println();
 		for (int j = 0; j < 43; j++) {
 			System.out.print("_");
@@ -12,13 +12,13 @@ public class TourJoueur {
 		for (int j = 0; j < 3; j++) {
 			System.out.println();
 		}
-		grilleJoueur.afficherGrille();
+		grilleJoueur.afficherGrille(true);
 
 		int[] cood = demanderCoordonnees();
 		grilleIa.tirer(cood[1], cood[0], advers);
 
 		
-		grilleIa.afficherGrille();
+		grilleIa.afficherGrille(false);
 		System.out.println();
 		for (int j = 0; j < 43; j++) {
 			System.out.print("_");
@@ -26,7 +26,7 @@ public class TourJoueur {
 		for (int j = 0; j < 3; j++) {
 			System.out.println();
 		}
-		grilleJoueur.afficherGrille();
+		grilleJoueur.afficherGrille(true);
 	}
 
 	static int[] demanderCoordonnees() {

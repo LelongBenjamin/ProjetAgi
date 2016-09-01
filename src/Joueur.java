@@ -17,7 +17,7 @@ public class Joueur {
 				Bateau bato = null;
 				while(!valide){
 					Main.clearTerminal();
-					grille.afficherGrille();
+					grille.afficherGrille(true);
 					System.out.print("Donnez les coordonnees pour le bateau de " + tab[i] + ": ");
 					int[] cood = TourJoueur.demanderCoordonnees();
 					boolean orientation = demanderOrientation();
