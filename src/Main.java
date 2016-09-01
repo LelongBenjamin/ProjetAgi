@@ -47,9 +47,11 @@ public class Main {
 		}
 	}
 
-	static void clearTerminal() {
+	public static void clearTerminal() {
 		for (int i = 0; i < 42; i++) {
 			System.out.print('\n');
 		}
 	}
+	
+	
 }
