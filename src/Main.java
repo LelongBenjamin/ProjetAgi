@@ -8,9 +8,9 @@ public class Main {
 		for (int j = 0; j < 43; j++) {
 			System.out.print("_");
 		}
-		System.out.println();
-		System.out.println();
-		System.out.println();
+		for (int j = 0; j < 3; j++) {
+			System.out.println();
+		}
 		grilleJoueur.afficherGrille();
 	}
 }
