@@ -41,4 +41,13 @@ public class Grille {
 			System.out.print("\n");
 		}
 	}
+
+	public Case[][] getCases() {
+		return cases;
+	}
+
+	public void setCases(Case[][] cases) {
+		this.cases = cases;
+	}
+	
 }
