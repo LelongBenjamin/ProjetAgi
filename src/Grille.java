@@ -21,6 +21,17 @@ public class Grille {
 		return cases[i][j];
 	}
 	
+	public void tirer(int x, int y){
+		if(cases[x][y] == Case.BATEAU){
+			cases[x][y] = Case.TIRTOUCHE;
+			System.out.println("Touché!");
+			
+		}else{
+			cases[x][y] = Case.TIRRATE;
+			System.out.println("Raté!");
+		}
+	}
+	
 	public void afficherGrille(){
 		
 		System.out.print("  ");
