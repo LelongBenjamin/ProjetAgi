@@ -19,8 +19,8 @@ public class TourIa {
 		coordonnee1=new Random().nextInt(10); 
 		coordonnee2=new Random().nextInt(10);
 		int[] proposition=new int[2];
-		proposition[1]=coordonnee1;
-		proposition[2]=coordonnee2;
+		proposition[0]=coordonnee1;
+		proposition[1]=coordonnee2;
 		for (int i = 0; i < tirFait.size(); i++) {
 			if(proposition.equals(tirFait.get(1))){
 				coorAleatoires();
