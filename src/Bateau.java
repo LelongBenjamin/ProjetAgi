@@ -10,6 +10,25 @@ public class Bateau {
 	static boolean Vertical = true;
 	static boolean Horizontal = false;
 	
+	public boolean estCoule(Grille grille) {
+		
+		/*if (orientation == true) { //vertical
+			
+			for (int i = x; i < x+taille; i++) {
+				
+			}
+			
+			
+		}
+		
+		if (grille.getCases()[x][y] == Case.TIRTOUCHE) {
+			
+		}
+		*/
+		return false;
+		
+	}
+	
 	public int getX() {
 		return x;
 	}
