@@ -28,7 +28,7 @@ public class TourJoueur {
 		grilleJoueur.afficherGrille();
 	}
 
-	public int[] demanderCoordonnees() {
+	static int[] demanderCoordonnees() {
 		int[] coordo = new int[2];
 		Scanner sc = new Scanner(System.in);
 		String mess = sc.nextLine();
@@ -46,7 +46,7 @@ public class TourJoueur {
 		return coordo;
 	}
 
-	protected boolean estLettre(char lettre) {
+	protected static boolean estLettre(char lettre) {
 
 		if (lettre >= 65 && lettre <= 74) {
 			return true;
@@ -54,7 +54,7 @@ public class TourJoueur {
 		return false;
 	}
 
-	protected boolean estChiffre(char chiffre) {
+	protected static boolean estChiffre(char chiffre) {
 		if (chiffre >= 48 && chiffre <= 57) {
 			return true;
 		}

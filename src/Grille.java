@@ -32,6 +32,12 @@ public class Grille {
 		}
 	}
 	
+	public void placerBateau(Bateau bateau){
+		for (int i = 0; i < bateau.getTaille(); i++) {
+			cases[bateau.getX()][bateau.getY() + i] = Case.BATEAU;
+		}
+	}
+	
 	public void afficherGrille(){
 		
 		System.out.print("  ");
