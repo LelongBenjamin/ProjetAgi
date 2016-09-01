@@ -36,13 +36,17 @@ public class Grille {
 		
 		if(!bateau.isOrientation()){
 			for (int i = 0; i < bateau.getTaille(); i++) {
-				if ()) {
-					
+				if (cases[bateau.getX()][bateau.getY() + i] == Case.BATEAU) {
+					System.out.println("Erreur de chevauchement ou de debordement. Reessayez!");
+					return false;
 				}
 			}
 		}else{
 			for (int i = 0; i < bateau.getTaille(); i++) {
-				cases[bateau.getX() + i][bateau.getY()] = Case.BATEAU;
+				if (cases[bateau.getX() + i][bateau.getY()] == Case.BATEAU) {
+					System.out.println("Erreur de chevauchement ou de debordement. Reessayez!");
+					return false;
+				}
 			}
 		}
 		
