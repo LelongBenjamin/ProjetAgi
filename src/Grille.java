@@ -14,13 +14,14 @@ public class Grille {
 	}
 	
 	public void afficherGrille(){
+		
 		for (int i = 0; i < cases.length; i++) {
 			for (int j = 0; j < cases.length; j++) {
 				System.out.print("|");
 				System.out.print(cases[i][j].getAffichage());
 			}
 			System.out.println("|");
-			for (int j = 0; j < 21; j++) {
+			for (int j = 0; j < 41; j++) {
 				System.out.print("-");
 			}
 			System.out.print("\n");
