@@ -9,7 +9,7 @@ public class TourIa {
 		grilleJoueur.tirer(cood[1], cood[0], joueur);
 	}
 	
-	private int[] coorAleatoires() {
+	static int[] coorAleatoires() {
 		
 		return new int[]{new Random().nextInt(10), new Random().nextInt(10)};
 		
