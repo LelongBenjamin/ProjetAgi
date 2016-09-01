@@ -32,7 +32,20 @@ public class Grille {
 		}
 	}
 	
-	public void placerBateau(Bateau bateau){
+	public boolean placerBateau(Bateau bateau){
+		
+		if(!bateau.isOrientation()){
+			for (int i = 0; i < bateau.getTaille(); i++) {
+				if ()) {
+					
+				}
+			}
+		}else{
+			for (int i = 0; i < bateau.getTaille(); i++) {
+				cases[bateau.getX() + i][bateau.getY()] = Case.BATEAU;
+			}
+		}
+		
 		if(!bateau.isOrientation()){
 			for (int i = 0; i < bateau.getTaille(); i++) {
 				cases[bateau.getX()][bateau.getY() + i] = Case.BATEAU;
@@ -42,6 +55,7 @@ public class Grille {
 				cases[bateau.getX() + i][bateau.getY()] = Case.BATEAU;
 			}
 		}
+		return true;
 	}
 	
 	public void afficherGrille(){
