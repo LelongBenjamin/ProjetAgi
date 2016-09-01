@@ -46,7 +46,7 @@ public class TourJoueur {
 		return coordo;
 	}
 
-	protected static boolean estLettre(char lettre) {
+	public static boolean estLettre(char lettre) {
 
 		if (lettre >= 65 && lettre <= 74) {
 			return true;
@@ -54,7 +54,7 @@ public class TourJoueur {
 		return false;
 	}
 
-	protected static boolean estChiffre(char chiffre) {
+	public static boolean estChiffre(char chiffre) {
 		if (chiffre >= 48 && chiffre <= 57) {
 			return true;
 		}
