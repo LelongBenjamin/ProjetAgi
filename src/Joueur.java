@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Joueur {
 
 	private List<Bateau> listeBateau = new ArrayList<>();
+	private int vies;
 	
 	public Joueur(Grille grille) {
 		
@@ -12,6 +13,7 @@ public class Joueur {
 		
 		for (int i = 0; i < tab.length; i++) {
 			boolean valide = false;
+			Bateau bato = null;
 			while(!valide){
 				Main.clearTerminal();
 				grille.afficherGrille();
@@ -19,11 +21,15 @@ public class Joueur {
 				int[] cood = TourJoueur.demanderCoordonnees();
 				boolean orientation = demanderOrientation();
 				
-				Bateau bato = new Bateau(tab[i], cood[1], cood[0], orientation);				
+				bato = new Bateau(tab[i], cood[1], cood[0], orientation);				
 				valide = grille.placerBateau(bato);
-				listeBateau.add(bato);
+				
 			}
+			listeBateau.add(bato);
 		}
+		
+		this.vies = nombreDeVies();
+		
 		Main.clearTerminal();
 		grille.afficherGrille();
 	}
@@ -54,7 +60,27 @@ public class Joueur {
 			total += this.listeBateau.get(i).getTaille();
 		}		
 		return total;
-	}	
+	}
+
+	public List<Bateau> getListeBateau() {
+		return listeBateau;
+	}
+
+	public void setListeBateau(List<Bateau> listeBateau) {
+		this.listeBateau = listeBateau;
+	}
+
+	public int getVies() {
+		return vies;
+	}
+
+	public void setVies(int vies) {
+		this.vies = vies;
+	}
+	
+	public void enleverUneVie() {
+		this.vies = this.vies - 1;
+	}
 	
 
 }

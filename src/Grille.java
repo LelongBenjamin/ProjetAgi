@@ -21,10 +21,11 @@ public class Grille {
 		return cases[i][j];
 	}
 	
-	public void tirer(int x, int y){
+	public void tirer(int x, int y, Joueur joueur){
 		if(cases[x][y] == Case.BATEAU){
 			cases[x][y] = Case.TIRTOUCHE;
 			System.out.println("Touché!");
+			joueur.enleverUneVie();
 			
 		}else{
 			cases[x][y] = Case.TIRRATE;

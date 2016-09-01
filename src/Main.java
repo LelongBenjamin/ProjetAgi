@@ -18,24 +18,32 @@ public class Main {
 			cpt = 1;
 		}
 
-		while (joueur.nombreDeVies() >= 1 && ordi.nombreDeVies() >= 1) {
+		while (joueur.getVies() >= 1 && ordi.getVies() >= 1) {
 
 			//clearTerminal();
+			
+			System.out.println(joueur.getVies());
+			System.out.println(ordi.getVies());
 
 			if (cpt % 2 == 0) {
 				if (cpt == 2) {
 					System.out.println("Le joueur commence\n");
 					cpt = 4;
 				}
-				new TourJoueur(grilleJoueur, grilleIa);
+				new TourJoueur(grilleJoueur, grilleIa, joueur, ordi);
 			} else {
 				if (cpt == 1) {
 					System.out.println("L'ordinateur commence\n");
 					cpt = 3;
 				}
-				new TourIa(grilleJoueur);
+				new TourIa(grilleJoueur, joueur, ordi);
 			}
 			cpt++;
+		}
+		if(joueur.getVies()>0){
+			System.out.println("Le joueur gagne");
+		}else{
+			System.out.println("L'ordinateur gagne");
 		}
 	}
 

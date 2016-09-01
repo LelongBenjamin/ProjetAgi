@@ -77,7 +77,9 @@ public class Bateau {
 	 * Retire une vie du bateau
 	 */
 	public void toucherBateau() {
-		this.taille = taille-1;
+		if (this.taille > 0) {
+			this.taille = taille-1;
+		}
 	}
 	
 }

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class TourJoueur {
 
-	public TourJoueur(Grille grilleJoueur, Grille grilleIa) {
+	public TourJoueur(Grille grilleJoueur, Grille grilleIa, Joueur joueur, Joueur advers) {
 		
 		grilleIa.afficherGrille();
 		System.out.println();
@@ -15,7 +15,8 @@ public class TourJoueur {
 		grilleJoueur.afficherGrille();
 
 		int[] cood = demanderCoordonnees();
-		grilleIa.tirer(cood[1], cood[0]);
+		grilleIa.tirer(cood[1], cood[0], advers);
+
 		
 		grilleIa.afficherGrille();
 		System.out.println();
