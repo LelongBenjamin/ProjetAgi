@@ -13,6 +13,14 @@ public class Grille {
 		
 	}
 	
+	int getTailleGrille(){
+		return cases.length;
+	}
+	
+	Case getCase(int i, int j){
+		return cases[i][j];
+	}
+	
 	public void afficherGrille(){
 		
 		System.out.print("  ");
