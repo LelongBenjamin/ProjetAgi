@@ -22,12 +22,13 @@ public class TourIa {
 		proposition[0]=coordonnee1;
 		proposition[1]=coordonnee2;
 		for (int i = 0; i < tirFait.size(); i++) {
-			if(proposition.equals(tirFait.get(1))){
+			if(proposition.equals(tirFait.get(i))){
 				coorAleatoires();
 			}
 		}
 		return proposition;
 		
 	}
+	
 
 }
