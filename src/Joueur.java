@@ -9,7 +9,7 @@ public class Joueur {
 		grille.afficherGrille();
 		System.out.print("Donnez les coordonnees pour le bateau de 5 : ");
 		int[] cood = TourJoueur.demanderCoordonnees();
-		grille.placerBateau(new Bateau(5, cood[1], cood[0], true));
+		grille.placerBateau(new Bateau(5, cood[1], cood[0], demanderOrientation()));
 		grille.afficherGrille();
 		System.out.print("Donnez les coordonnees pour le bateau de 4 : ");
 		cood = TourJoueur.demanderCoordonnees();
@@ -27,6 +27,11 @@ public class Joueur {
 		cood = TourJoueur.demanderCoordonnees();
 		grille.placerBateau(new Bateau(2, cood[1], cood[0], true));
 		grille.afficherGrille();
+	}
+	
+	public boolean demanderOrientation(){
+		System.out.print("\n (1) verticale (2) horizontal : ");
+		return false;
 	}
 	
 	/**

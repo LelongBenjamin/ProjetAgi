@@ -22,4 +22,10 @@ public class Main {
 			new TourJoueur(grilleJoueur, grilleIa);
 		}
 	}
+	
+	static void clearTerminal(){
+		for (int i = 0; i < 42; i++) {
+			System.out.print('\n');
+		}
+	}
 }
