@@ -36,8 +36,15 @@ public class TourJoueur {
 
 		if (mess.length() == 2 && estLettre(mess.charAt(0)) && estChiffre(mess.charAt(1))) {
 
-			coordo[0] = mess.charAt(0) - 65;
+			if (mess.charAt(0) >= 65 && mess.charAt(0) <= 74) {			
+				coordo[0] = mess.charAt(0) - 65;
+			} else {
+				coordo[0] = mess.charAt(0) - 97;
+			}	
+			
 			coordo[1] = mess.charAt(1) - 48;
+			
+			
 			System.out.println("coordonnees valide");
 		} else {
 			System.out.println("Mauvaises coordonnees : reessayez !");
@@ -49,7 +56,7 @@ public class TourJoueur {
 
 	public static boolean estLettre(char lettre) {
 
-		if (lettre >= 65 && lettre <= 74) {
+		if ((lettre >= 65 && lettre <= 74) || (lettre >= 97 && lettre <= 106)) {
 			return true;
 		}
 		return false;
