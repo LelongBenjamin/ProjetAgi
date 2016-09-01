@@ -5,6 +5,7 @@ public class Bateau {
 	private int taille;
 	private int x;
 	private int y;
+	private boolean orientation;
 	
 	static boolean Vertical = true;
 	static boolean Horizontal = false;
@@ -41,10 +42,19 @@ public class Bateau {
 		Horizontal = horizontal;
 	}
 
-	public Bateau(int taille, int x, int y, boolean Orientation){
+	public Bateau(int taille, int x, int y, boolean orientation){
 		this.taille = taille;
 		this.x = x;
 		this.y = y;
+		this.orientation = orientation;
+	}
+
+	public boolean isOrientation() {
+		return orientation;
+	}
+
+	public void setOrientation(boolean orientation) {
+		this.orientation = orientation;
 	}
 
 	/**

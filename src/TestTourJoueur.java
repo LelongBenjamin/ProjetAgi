@@ -2,29 +2,21 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class TestTourJoueur extends TourJoueur {
-	
-
-	public TestTourJoueur(Grille grilleJoueur, Grille grilleIa) {
-		super(grilleJoueur, grilleIa);
-		// TODO Auto-generated constructor stub
-	}
+public class TestTourJoueur {
 
 	@Test
 	public void testChiffre() {
-		assertTrue( estChiffre('8') );
-		assertFalse( estChiffre('a') );
+		boolean l1 = TourJoueur.estChiffre('8');
+		boolean l2 = TourJoueur.estChiffre('a');
+		assertTrue( l1 );
+		assertFalse( l2 );
 	}
 	
 	@Test
 	public void testLettre() {
-		assertTrue( estLettre('r') );
-		assertFalse( estLettre('5') );
-	}
-	
-	@Test
-	public void testCoordonnees() {
-		fail("Not yet implemented");
+		assertTrue( TourJoueur.estLettre('A') );
+		assertFalse( TourJoueur.estLettre('K') );
+		assertFalse( TourJoueur.estLettre('5') );
 	}
 
 }
