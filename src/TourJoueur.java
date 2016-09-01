@@ -14,8 +14,18 @@ public class TourJoueur {
 		}
 		grilleJoueur.afficherGrille();
 
-		demanderCoordonnees();
-
+		int[] cood = demanderCoordonnees();
+		grilleIa.tirer(cood[0], cood[1]);
+		
+		grilleIa.afficherGrille();
+		System.out.println();
+		for (int j = 0; j < 43; j++) {
+			System.out.print("_");
+		}
+		for (int j = 0; j < 3; j++) {
+			System.out.println();
+		}
+		grilleJoueur.afficherGrille();
 	}
 
 	public int[] demanderCoordonnees() {
