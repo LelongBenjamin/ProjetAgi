@@ -29,6 +29,9 @@ public class Grille {
 			cases[x][y] = Case.TIRTOUCHE;
 			System.out.println("Touché!");
 			joueur.enleverUneVie();
+	
+			
+			
 
 		} else {
 			cases[x][y] = Case.TIRRATE;

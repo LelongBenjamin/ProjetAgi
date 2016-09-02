@@ -1,34 +1,42 @@
 
-
 public class Bateau {
 
 	private int taille;
 	private int x;
 	private int y;
 	private boolean orientation;
-	
+
 	static boolean Vertical = true;
 	static boolean Horizontal = false;
-	
-	public boolean estCoule(Grille grille) {
+
+	public boolean estCoule(Grille grille) {	
 		
-		/*if (orientation == true) { //vertical
-			
+		if (orientation) {
+		
 			for (int i = x; i < x+taille; i++) {
+				
+				if (grille.getCases()[i][y].equals(Case.BATEAU)) {
+					return false;
+				}
+				
+			}
+		
+		} else {
+			
+			for (int i = y; i < y+taille; i++) {
+				
+				if (grille.getCases()[x][i].equals(Case.BATEAU)) {
+					return false;
+				}
 				
 			}
 			
-			
 		}
 		
-		if (grille.getCases()[x][y] == Case.TIRTOUCHE) {
-			
-		}
-		*/
-		return false;
+		return  true;
 		
 	}
-	
+
 	public int getX() {
 		return x;
 	}
@@ -61,7 +69,7 @@ public class Bateau {
 		Horizontal = horizontal;
 	}
 
-	public Bateau(int taille, int x, int y, boolean orientation){
+	public Bateau(int taille, int x, int y, boolean orientation) {
 		this.taille = taille;
 		this.x = x;
 		this.y = y;
@@ -78,6 +86,7 @@ public class Bateau {
 
 	/**
 	 * Retourne la taille du bateau
+	 * 
 	 * @return
 	 */
 	public int getTaille() {
@@ -86,19 +95,20 @@ public class Bateau {
 
 	/**
 	 * Definit la taille du bateau
+	 * 
 	 * @param taille
 	 */
 	public void setTaille(int taille) {
 		this.taille = taille;
 	}
-	
+
 	/**
 	 * Retire une vie du bateau
 	 */
 	public void toucherBateau() {
 		if (this.taille > 0) {
-			this.taille = taille-1;
+			this.taille = taille - 1;
 		}
 	}
-	
+
 }
