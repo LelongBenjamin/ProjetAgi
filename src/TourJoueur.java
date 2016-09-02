@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class TourJoueur {
@@ -27,6 +28,15 @@ public class TourJoueur {
 		for (int j = 0; j < 3; j++) {
 			System.out.println();
 		}
+		
+		for (int i = 0; i < advers.getListeBateau().size(); i++) {
+			
+			if (advers.getListeBateau().get(i).estCoule(grilleIa)) {
+				System.out.println("Bateau de taille "+advers.getListeBateau().get(i).getTaille()+" coulé.");
+			}
+			
+		}
+		
 		grilleJoueur.afficherGrille(true);
 	}
 
@@ -34,6 +44,10 @@ public class TourJoueur {
 		int[] coordo = new int[2];
 		Scanner sc = new Scanner(System.in);
 		String mess = sc.nextLine();
+		
+		if (mess.equals("r")) {
+			return new int[]{new Random().nextInt(10), new Random().nextInt(10)};
+		}
 
 		if (mess.length() == 2 && estLettre(mess.charAt(0)) && estChiffre(mess.charAt(1))) {
 
