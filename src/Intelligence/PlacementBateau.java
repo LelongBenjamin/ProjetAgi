@@ -78,6 +78,7 @@ public class PlacementBateau {
 	 * Demande l'orientation dans le cas d'un placement manuel
 	 * @return
 	 */
+	@SuppressWarnings("resource")
 	private static boolean demanderOrientation() {
 		
 		System.out.print("\n (1) Vertical (2) Horizontal: >");

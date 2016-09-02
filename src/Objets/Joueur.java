@@ -22,6 +22,7 @@ public class Joueur {
 			
 			System.out.print("- Pour commencer appuyez sur entree \n"
 					+ "- ou entrez le code \"feneant\" pour placer \nvos bateaux automatiquement.\n>");
+			@SuppressWarnings("resource")
 			Scanner sc = new Scanner(System.in);
 			String mess = sc.nextLine();
 

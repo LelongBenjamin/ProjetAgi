@@ -30,6 +30,7 @@ public class TourJoueur {
 
 	}
 
+	@SuppressWarnings("resource")
 	public static int[] demanderCoordonnees() {
 
 		int[] coordo = new int[2];

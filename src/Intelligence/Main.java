@@ -1,8 +1,7 @@
 package Intelligence;
+
 import java.util.Random;
 import java.util.Scanner;
-
-import javax.swing.JFrame;
 
 import Objets.Grille;
 import Objets.Joueur;
@@ -56,7 +55,9 @@ public class Main {
 		}
 		
 		System.out.print("Tapez Entree pour continuer...>");
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
+		@SuppressWarnings("unused")
 		String mess = sc.nextLine();
 		
 		Affichage.credits();
