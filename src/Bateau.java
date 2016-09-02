@@ -6,49 +6,80 @@ public class Bateau {
 	private int y;
 	private boolean orientation;
 
-	static boolean Vertical = true;
-	static boolean Horizontal = false;
+	public static boolean Vertical = true;
+	public static boolean Horizontal = false;
 
-	public boolean estCoule(Grille grille) {	
+	/**
+	 * Constructeur: cree un bateau en fonction d'un taille, sa position et son orientation
+	 * @param taille
+	 * @param x
+	 * @param y
+	 * @param orientation
+	 */
+	public Bateau(int taille, int x, int y, boolean orientation) {
+		this.taille = taille;
+		this.x = x;
+		this.y = y;
+		this.orientation = orientation;
+	}
+	
+	
+	/**
+	 * Renvoi si le bateau est encore en vie
+	 * @param grille
+	 * @return
+	 */
+	public boolean estCoule(Grille grille) {
 		
 		if (orientation) {
-		
-			for (int i = x; i < x+taille; i++) {
-				
+
+			for (int i = x; i < x + taille; i++) {
+
 				if (grille.getCases()[i][y].equals(Case.BATEAU)) {
 					return false;
 				}
-				
 			}
-		
-		} else {
 			
-			for (int i = y; i < y+taille; i++) {
-				
+		} else {
+
+			for (int i = y; i < y + taille; i++) {
+
 				if (grille.getCases()[x][i].equals(Case.BATEAU)) {
 					return false;
 				}
-				
 			}
-			
 		}
-		
-		return  true;
-		
+		return true;
 	}
 
+	/**
+	 * Renvoie la position x
+	 * @return
+	 */
 	public int getX() {
 		return x;
 	}
 
+	/**
+	 * Definit la position x
+	 * @param x
+	 */
 	public void setX(int x) {
 		this.x = x;
 	}
 
+	/**
+	 * Renvoie la position y
+	 * @return
+	 */
 	public int getY() {
 		return y;
 	}
 
+	/**
+	 * Definit la position y
+	 * @param y
+	 */
 	public void setY(int y) {
 		this.y = y;
 	}
@@ -69,12 +100,6 @@ public class Bateau {
 		Horizontal = horizontal;
 	}
 
-	public Bateau(int taille, int x, int y, boolean orientation) {
-		this.taille = taille;
-		this.x = x;
-		this.y = y;
-		this.orientation = orientation;
-	}
 
 	public boolean isOrientation() {
 		return orientation;

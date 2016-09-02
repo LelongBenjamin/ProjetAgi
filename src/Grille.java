@@ -13,14 +13,20 @@ public class Grille {
 
 	}
 
-	int getTailleGrille() {
+	public int getTailleGrille() {
 		return cases.length;
 	}
 
-	Case getCase(int i, int j) {
+	public Case getCase(int i, int j) {
 		return cases[i][j];
 	}
 
+	/**
+	 * Tire sur une grille : renvoi un message d'information et transforme la Case de la grille si elle a ete touchee
+	 * @param x
+	 * @param y
+	 * @param joueur
+	 */
 	public void tirer(int x, int y, Joueur joueur) {
 
 		if (cases[x][y] == Case.TIRTOUCHE) {
@@ -36,6 +42,11 @@ public class Grille {
 		}
 	}
 
+	/**
+	 * Place un bateau sur la grille
+	 * @param bateau
+	 * @return
+	 */
 	public boolean placerBateau(Bateau bateau) {
 
 		if (!bateau.isOrientation()) {
@@ -64,6 +75,10 @@ public class Grille {
 		return true;
 	}
 
+	/**
+	 * Affiche la grille
+	 * @param bateau
+	 */
 	public void afficherGrille(boolean bateau) {
 
 		System.out.print("  ");
