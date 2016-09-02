@@ -5,55 +5,36 @@ public class TourJoueur {
 
 	public TourJoueur(Grille grilleJoueur, Grille grilleIa, Joueur joueur, Joueur advers) {
 
+		Main.clearTerminal();
+
 		grilleIa.afficherGrille(false);
-		System.out.println();
-		for (int j = 0; j < 43; j++) {
-			System.out.print("_");
-		}
-		System.out.println();
-		for (int i = 0; i < advers.getListeBateau().size(); i++) {
 
-			if (advers.getListeBateau().get(i).estCoule(grilleIa)) {
-				System.out.println("Bateau de taille " + advers.getListeBateau().get(i).getTaille() + " coulé.");
-			}
-
-		}
-
-		System.out.println();
-		for (int j = 0; j < 43; j++) {
-			System.out.print("_");
-		}
-
-		for (int j = 0; j < 3; j++) {
-			System.out.println();
-		}
+		Affichage.separateur(43);
+		Affichage.bateauxTues(grilleIa, advers);
+		Affichage.separateur(43);
+		Affichage.passerLigne(3);
 		grilleJoueur.afficherGrille(true);
 
 		System.out.print("Entrez les coordonnees de tir >");
 		int[] cood = demanderCoordonnees();
-
 		grilleIa.tirer(cood[1], cood[0], advers);
 
 		grilleIa.afficherGrille(false);
-		System.out.println();
-		for (int j = 0; j < 43; j++) {
-			System.out.print("_");
-		}
-		for (int j = 0; j < 3; j++) {
-			System.out.println();
-		}
-
+		Affichage.separateur(43);
+		Affichage.passerLigne(3);
 		grilleJoueur.afficherGrille(true);
 
 	}
 
 	public static int[] demanderCoordonnees() {
+
 		int[] coordo = new int[2];
 		Scanner sc = new Scanner(System.in);
 		String mess = sc.nextLine();
 
 		if (mess.equals("r")) {
 			return new int[] { new Random().nextInt(10), new Random().nextInt(10) };
+			
 		} else if (mess.equals("yannsecq<3")) {
 			Main.clearTerminal();
 			System.out.println("c'etait un piege :/");

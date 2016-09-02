@@ -8,9 +8,15 @@ public class Joueur {
 	private List<Bateau> listeBateau = new ArrayList<>();
 	private int vies;
 
-	public Joueur(Grille grille, boolean ia) {
+	/**
+	 * Constructeur: initialise la partie en creant le joueur et definit sa vie une fois ses bateaux places
+	 * @param grille
+	 * @param ia
+	 */
+	public Joueur(Grille grille, boolean ia) {		
 
 		if (!ia) {
+			
 			System.out.print("Pour commencer appuyez sur entree >");
 			Scanner sc = new Scanner(System.in);
 			String mess = sc.nextLine();
@@ -21,95 +27,20 @@ public class Joueur {
 				System.exit(1);
 
 			} else if (mess.equals("zz")) {
-				int[] tab = new int[] { 5, 4, 3, 3, 2 };
-
-				for (int i = 0; i < tab.length; i++) {
-					boolean valide = false;
-					Bateau bato = null;
-					while (!valide) {
-						boolean orientation;
-						int[] cood = TourIa.coorAleatoires();
-						if (new Random().nextInt(2) == 1) {
-							orientation = true;
-						} else {
-							orientation = false;
-						}
-
-						bato = new Bateau(tab[i], cood[1], cood[0], orientation);
-						valide = grille.placerBateau(bato);
-
-					}
-					listeBateau.add(bato);
-				}
-			} else {
-				int[] tab = new int[] { 5, 4, 3, 3, 2 };
-
-				for (int i = 0; i < tab.length; i++) {
-					boolean valide = false;
-					Bateau bato = null;
-					Main.clearTerminal();
-					int cpt = 0;
-					while (!valide) {
-						Main.clearTerminal();
-						if (cpt > 0) {
-							System.out.println("Erreur de chevauchement ou de debordement. Reessayez! \n");
-						}
-						grille.afficherGrille(true);
-						System.out.print("Donnez les coordonnees pour le bateau de " + tab[i] + ":\n>");
-						int[] cood = TourJoueur.demanderCoordonnees();
-						boolean orientation = demanderOrientation();
-
-						bato = new Bateau(tab[i], cood[1], cood[0], orientation);
-						valide = grille.placerBateau(bato);
-						cpt++;
-					}
-					listeBateau.add(bato);
-
-				}
+				PlacementBateau.aleatoirement(grille, this);				
+				
+			} else {				
+				PlacementBateau.manuel(grille, this);	
 			}
-		} else {
-			int[] tab = new int[] { 5, 4, 3, 3, 2 };
-
-			for (int i = 0; i < tab.length; i++) {
-				boolean valide = false;
-				Bateau bato = null;
-				while (!valide) {
-					boolean orientation;
-					int[] cood = TourIa.coorAleatoires();
-					if (new Random().nextInt(2) == 1) {
-						orientation = true;
-					} else {
-						orientation = false;
-					}
-
-					bato = new Bateau(tab[i], cood[1], cood[0], orientation);
-					valide = grille.placerBateau(bato);
-
-				}
-				listeBateau.add(bato);
-			}
+			
+		} else {			
+			PlacementBateau.aleatoirement(grille, this);
 		}
 
 		this.vies = nombreDeVies();
-
 		Main.clearTerminal();
 	}
 
-	public boolean demanderOrientation() {
-		System.out.print("\n (1) Vertical (2) Horizontal: >");
-		Scanner sc = new Scanner(System.in);
-		String mess = sc.nextLine();
-
-		if (mess.length() == 1 && (mess.charAt(0) == '1' || mess.charAt(0) == '2')) {
-			if (mess.charAt(0) == '1') {
-				return true;
-			}
-			return false;
-		} else {
-			demanderOrientation();
-		}
-		return false;
-	}
 
 	/**
 	 * Nombre de vies du bateau
@@ -124,26 +55,40 @@ public class Joueur {
 		return total;
 	}
 
+	/**
+	 * Retourne la liste des bateaux du joueur
+	 * @return
+	 */
 	public List<Bateau> getListeBateau() {
 		return listeBateau;
 	}
 
-	public void setListeBateau(List<Bateau> listeBateau) {
-		this.listeBateau = listeBateau;
-	}
-
+	/**
+	 * Retourne la vie du joueur
+	 * @return
+	 */
 	public int getVies() {
 		return vies;
 	}
 
+	/**
+	 * Definit la vies du joueur
+	 * @param vies
+	 */
 	public void setVies(int vies) {
 		this.vies = vies;
 	}
 
+	/**
+	 * Retire une vie du joueur
+	 */
 	public void enleverUneVie() {
 		this.vies = this.vies - 1;
 	}
 
+	/**
+	 * Met la vie du joueur a 0
+	 */
 	public void tuer() {
 		this.vies = 0;
 	}
