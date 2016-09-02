@@ -9,29 +9,57 @@ public class Joueur {
 	private int vies;
 	
 	public Joueur(Grille grille, boolean ia) {
+
 		if(!ia){
-			int[] tab = new int[]{5,4,3,3,2};
-		
-			for (int i = 0; i < tab.length; i++) {
-				boolean valide = false;
-				Bateau bato = null;
-				Main.clearTerminal();
-				int cpt = 0;
-				while(!valide){
-					Main.clearTerminal();
-					if(cpt > 0){
-						System.out.println("Erreur de chevauchement ou de debordement. Reessayez! \n");
-					}
-					grille.afficherGrille(true);
-					System.out.print("Donnez les coordonnees pour le bateau de " + tab[i] + ":\n>");
-					int[] cood = TourJoueur.demanderCoordonnees();
-					boolean orientation = demanderOrientation();
+			System.out.print("Pour commencer appuyez sur entree >");
+			Scanner sc = new Scanner(System.in);
+			String mess = sc.nextLine();
+			if(mess.equals("zz")){
+				int[] tab = new int[]{5,4,3,3,2};
 				
-					bato = new Bateau(tab[i], cood[1], cood[0], orientation);				
-					valide = grille.placerBateau(bato);
-					cpt++;
+				for (int i = 0; i < tab.length; i++) {
+					boolean valide = false;
+					Bateau bato = null;
+					while(!valide){
+						boolean orientation;
+						int[] cood = TourIa.coorAleatoires();
+						if(new Random().nextInt(2)==1){
+							orientation=true;
+						}else{
+							orientation = false;
+						}
+					
+						bato = new Bateau(tab[i], cood[1], cood[0], orientation);				
+						valide = grille.placerBateau(bato);
+					
+					}
+					listeBateau.add(bato);
 				}
-				listeBateau.add(bato);
+			}else{
+				int[] tab = new int[]{5,4,3,3,2};
+		
+				for (int i = 0; i < tab.length; i++) {
+					boolean valide = false;
+					Bateau bato = null;
+					Main.clearTerminal();
+					int cpt = 0;
+					while(!valide){
+						Main.clearTerminal();
+						if(cpt > 0){
+							System.out.println("Erreur de chevauchement ou de debordement. Reessayez! \n");
+						}
+						grille.afficherGrille(true);
+						System.out.print("Donnez les coordonnees pour le bateau de " + tab[i] + ":\n>");
+						int[] cood = TourJoueur.demanderCoordonnees();
+						boolean orientation = demanderOrientation();
+				
+						bato = new Bateau(tab[i], cood[1], cood[0], orientation);				
+						valide = grille.placerBateau(bato);
+						cpt++;
+					}
+					listeBateau.add(bato);
+				
+				}
 			}
 		}else{
 			int[] tab = new int[]{5,4,3,3,2};
