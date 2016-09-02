@@ -9,6 +9,19 @@ public class TourIa {
 		System.out.println("C'est le tour de l'ordinateur!");
 		int[] cood = coorAleatoires();
 		boolean bon = false;
+		int a=new Random().nextInt(4);
+		if(a==0){
+			for (int i = 0; i < grilleJoueur.getTailleGrille(); i++) {
+				for (int j = 0; j < grilleJoueur.getTailleGrille(); j++) {
+					if(grilleJoueur.getCase(i,j) == Case.BATEAU){
+						cood = new int[]{j, i};
+					}
+				}
+			}
+			bon=true;
+		}
+		
+		
 		while(!bon){
 			if(grilleJoueur.getCase(cood[1],cood[0]) == Case.TIRRATE && grilleJoueur.getCase(cood[1],cood[0]) == Case.TIRTOUCHE){
 				cood = coorAleatoires();
@@ -16,7 +29,7 @@ public class TourIa {
 				bon = true;
 			}
 		}
-		
+				
 		grilleJoueur.tirer(cood[1], cood[0], joueur);
 	}
 	
