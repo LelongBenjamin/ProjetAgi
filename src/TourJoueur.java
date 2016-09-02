@@ -45,9 +45,9 @@ public class TourJoueur {
 			coordo[1] = mess.charAt(1) - 48;
 			
 			
-			System.out.println("coordonnees valide");
+			//System.out.println("coordonnees valide");
 		} else {
-			System.out.println("Mauvaises coordonnees : reessayez !");
+			System.out.print("Mauvaises coordonnees: reessayez !\n>");
 			demanderCoordonnees();
 		}
 

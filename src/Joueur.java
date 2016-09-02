@@ -18,7 +18,7 @@ public class Joueur {
 				while(!valide){
 					Main.clearTerminal();
 					grille.afficherGrille(true);
-					System.out.print("Donnez les coordonnees pour le bateau de " + tab[i] + ": ");
+					System.out.print("Donnez les coordonnees pour le bateau de " + tab[i] + ":\n>");
 					int[] cood = TourJoueur.demanderCoordonnees();
 					boolean orientation = demanderOrientation();
 				
@@ -57,7 +57,7 @@ public class Joueur {
 	}
 	
 	public boolean demanderOrientation(){
-		System.out.print("\n (1) verticale (2) horizontal : ");
+		System.out.print("\n (1) Vertical (2) Horizontal: >");
 		Scanner sc = new Scanner(System.in);
 		String mess = sc.nextLine();
 		
