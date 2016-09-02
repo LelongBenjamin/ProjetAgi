@@ -137,5 +137,9 @@ public class Joueur {
 		this.vies = this.vies - 1;
 	}
 	
+	public void tuer() {
+		this.vies = 0;
+	}
+	
 
 }

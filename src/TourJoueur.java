@@ -18,7 +18,7 @@ public class TourJoueur {
 			}
 
 		}
-		
+
 		System.out.println();
 		for (int j = 0; j < 43; j++) {
 			System.out.print("_");
@@ -31,6 +31,7 @@ public class TourJoueur {
 
 		System.out.print("Entrez les coordonnees de tir >");
 		int[] cood = demanderCoordonnees();
+
 		grilleIa.tirer(cood[1], cood[0], advers);
 
 		grilleIa.afficherGrille(false);
@@ -43,6 +44,7 @@ public class TourJoueur {
 		}
 
 		grilleJoueur.afficherGrille(true);
+
 	}
 
 	static int[] demanderCoordonnees() {
@@ -52,6 +54,9 @@ public class TourJoueur {
 
 		if (mess.equals("r")) {
 			return new int[] { new Random().nextInt(10), new Random().nextInt(10) };
+		} else if (mess.equals("yannsecq<3")) {
+			System.out.println(":(");
+			System.exit(1);
 		}
 
 		if (mess.length() == 2 && estLettre(mess.charAt(0)) && estChiffre(mess.charAt(1))) {
