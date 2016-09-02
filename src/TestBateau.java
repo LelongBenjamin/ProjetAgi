@@ -26,5 +26,16 @@ public class TestBateau {
 		assertTrue(boat2.estCoule(grille));
 		
 	}
+	
+	@Test
+	public void testToucheBateau() {
+		
+		Grille grille = new Grille();
+		Bateau boat1 = new Bateau(4,0,0,Bateau.Vertical);
+		grille.placerBateau(boat1);
+		boat1.toucherBateau();
+		assertEquals(3, boat1.getTaille());
+		
+	}
 
 }
