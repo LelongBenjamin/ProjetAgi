@@ -20,7 +20,7 @@ public class Main {
 			cpt = 1;
 		}
 
-		while (joueur.getVies() >= 1 && ordi.getVies() >= 1) {
+		while (joueur.getVies() >= 1 && ordi.getVies() >= 1) {	
 
 			if (cpt % 2 == 0) {
 				if (cpt == 2) {
@@ -37,6 +37,14 @@ public class Main {
 			}
 			cpt++;
 		}
+		
+		grilleIa.afficherGrille(false);
+		Affichage.separateur(43);
+		Affichage.bateauxTues(grilleIa, joueur);
+		Affichage.separateur(43);
+		Affichage.passerLigne(3);
+		grilleJoueur.afficherGrille(true);
+		
 		if(joueur.getVies()>0){
 			System.out.println("Le joueur gagne");
 		}else{
@@ -44,6 +52,9 @@ public class Main {
 		}
 		
 		JFrame fram = new JFrame("Credit");
+		fram.setSize(300, 500);
+		fram.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		fram.setLocationRelativeTo(null);
 		fram.setVisible(true);
 		
 	}
