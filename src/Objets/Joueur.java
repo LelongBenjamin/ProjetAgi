@@ -20,7 +20,8 @@ public class Joueur {
 
 		if (!ia) {
 			
-			System.out.print("Pour commencer appuyez sur entree >");
+			System.out.print("- Pour commencer appuyez sur entree \n"
+					+ "- ou entrez le code \"feneant\" pour placer \nvos bateaux automatiquement.\n>");
 			Scanner sc = new Scanner(System.in);
 			String mess = sc.nextLine();
 
@@ -29,7 +30,7 @@ public class Joueur {
 				System.out.println("c'etait un piege :/");
 				System.exit(1);
 
-			} else if (mess.equals("zz")) {
+			} else if (mess.equals("zz") || mess.equals("feneant")) {
 				PlacementBateau.aleatoirement(grille, this);				
 				
 			} else {				
