@@ -22,11 +22,6 @@ public class Main {
 
 		while (joueur.getVies() >= 1 && ordi.getVies() >= 1) {
 
-			//clearTerminal();
-			
-			System.out.println(joueur.getVies());
-			System.out.println(ordi.getVies());
-
 			if (cpt % 2 == 0) {
 				if (cpt == 2) {
 					System.out.println("Le joueur commence\n");
@@ -64,7 +59,6 @@ public class Main {
 			System.out.print('\n');
 		}
 	}
-
 	
 	
 	
