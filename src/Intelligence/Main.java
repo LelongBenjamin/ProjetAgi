@@ -1,5 +1,6 @@
 package Intelligence;
 import java.util.Random;
+import java.util.Scanner;
 
 import javax.swing.JFrame;
 
@@ -9,7 +10,7 @@ import Objets.Joueur;
 public class Main {
 	public static void main(String[] args) {
 
-		Grille grilleJoueur = new Grille();
+		/*Grille grilleJoueur = new Grille();
 		Grille grilleIa = new Grille();
 
 		Joueur joueur = new Joueur(grilleJoueur, false);
@@ -52,13 +53,20 @@ public class Main {
 			System.out.println("Le joueur gagne");
 		}else{
 			System.out.println("L'ordinateur gagne");
-		}
+		}*/
 		
-		JFrame fram = new JFrame("Credit");
+		/*JFrame fram = new JFrame("Credit");
 		fram.setSize(300, 500);
 		fram.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fram.setLocationRelativeTo(null);
-		fram.setVisible(true);
+		fram.setVisible(true);*/
+		
+		System.out.print("Tapez Entree pour continuer...>");
+		Scanner sc = new Scanner(System.in);
+		String mess = sc.nextLine();
+		
+		Affichage.credits();
+		
 		
 	}
 

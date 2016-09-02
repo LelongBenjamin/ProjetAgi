@@ -41,5 +41,23 @@ public class Affichage {
 		
 	}
 	
+	public static void credits() {
+		
+		separateur(35);
+		System.out.println("\n      Merci d'avoir participe!");
+		System.out.println("    Realise en projet 2016/2017");
+		System.out.println("              Arthur");
+		System.out.println("             Benjamin");
+		System.out.println("             Mallaury");
+		System.out.println("              Melvin");
+		System.out.println("              Raphael");
+		System.out.println("              Adrien");
+		System.out.println("              Alexis");
+		separateur(35);
+		
+		
+		
+	}
+	
 
 }
