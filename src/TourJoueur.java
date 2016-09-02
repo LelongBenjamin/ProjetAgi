@@ -15,6 +15,7 @@ public class TourJoueur {
 		}
 		grilleJoueur.afficherGrille(true);
 
+		System.out.print("Entrez les coordonnees de tir >");
 		int[] cood = demanderCoordonnees();
 		grilleIa.tirer(cood[1], cood[0], advers);
 

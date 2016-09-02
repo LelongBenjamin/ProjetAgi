@@ -18,5 +18,7 @@ public class TestTourJoueur {
 		assertFalse( TourJoueur.estLettre('K') );
 		assertFalse( TourJoueur.estLettre('5') );
 	}
+	
+	//La fonction demanderCoordonnees est un processus en jeu, difficilement testable
 
 }

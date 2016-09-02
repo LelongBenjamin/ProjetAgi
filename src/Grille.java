@@ -41,14 +41,12 @@ public class Grille {
 		if (!bateau.isOrientation()) {
 			for (int i = 0; i < bateau.getTaille(); i++) {
 				if (cases[bateau.getX()][bateau.getY() + i] == Case.BATEAU || bateau.getY() + bateau.getTaille() > 10) {
-					System.out.println("Erreur de chevauchement ou de debordement. Reessayez!");
 					return false;
 				}
 			}
 		} else {
 			for (int i = 0; i < bateau.getTaille(); i++) {
 				if (cases[bateau.getX() + i][bateau.getY()] == Case.BATEAU || bateau.getX() + bateau.getTaille() > 10) {
-					System.out.println("Erreur de chevauchement ou de debordement. Reessayez!");
 					return false;
 				}
 			}

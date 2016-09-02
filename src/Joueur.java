@@ -15,8 +15,13 @@ public class Joueur {
 			for (int i = 0; i < tab.length; i++) {
 				boolean valide = false;
 				Bateau bato = null;
+				Main.clearTerminal();
+				int cpt = 0;
 				while(!valide){
 					Main.clearTerminal();
+					if(cpt > 0){
+						System.out.println("Erreur de chevauchement ou de debordement. Reessayez! \n");
+					}
 					grille.afficherGrille(true);
 					System.out.print("Donnez les coordonnees pour le bateau de " + tab[i] + ":\n>");
 					int[] cood = TourJoueur.demanderCoordonnees();
@@ -24,7 +29,7 @@ public class Joueur {
 				
 					bato = new Bateau(tab[i], cood[1], cood[0], orientation);				
 					valide = grille.placerBateau(bato);
-				
+					cpt++;
 				}
 				listeBateau.add(bato);
 			}

@@ -53,5 +53,13 @@ public class Main {
 		}
 	}
 	
+	public static void clearTerminal(int var) {
+		for (int i = 0; i < var; i++) {
+			System.out.print('\n');
+		}
+	}
+	
 	
 }
+	
+
