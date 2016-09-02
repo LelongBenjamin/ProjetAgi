@@ -1,5 +1,10 @@
+package Intelligence;
 import java.util.Random;
 import java.util.Scanner;
+
+import Objets.Bateau;
+import Objets.Grille;
+import Objets.Joueur;
 
 public class PlacementBateau {
 

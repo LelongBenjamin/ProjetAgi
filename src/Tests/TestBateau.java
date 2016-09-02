@@ -1,6 +1,12 @@
-import static org.junit.Assert.*;
+package Tests;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
+import Objets.Bateau;
+import Objets.Grille;
 
 public class TestBateau {
 

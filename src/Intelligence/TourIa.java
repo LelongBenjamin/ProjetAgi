@@ -1,5 +1,10 @@
+package Intelligence;
 
 import java.util.Random;
+
+import Objets.Case;
+import Objets.Grille;
+import Objets.Joueur;
 
 
 public class TourIa {

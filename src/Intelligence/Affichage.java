@@ -1,3 +1,8 @@
+package Intelligence;
+
+import Objets.Grille;
+import Objets.Joueur;
+
 /**
  * Classe regroupant les affichages graphiques
  * @author martella

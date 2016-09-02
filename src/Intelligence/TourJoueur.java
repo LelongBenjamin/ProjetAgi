@@ -1,5 +1,9 @@
+package Intelligence;
 import java.util.Random;
 import java.util.Scanner;
+
+import Objets.Grille;
+import Objets.Joueur;
 
 public class TourJoueur {
 

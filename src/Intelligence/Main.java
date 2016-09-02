@@ -1,7 +1,10 @@
+package Intelligence;
 import java.util.Random;
-import java.util.Scanner;
 
 import javax.swing.JFrame;
+
+import Objets.Grille;
+import Objets.Joueur;
 
 public class Main {
 	public static void main(String[] args) {
