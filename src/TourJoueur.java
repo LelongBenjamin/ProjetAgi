@@ -47,7 +47,7 @@ public class TourJoueur {
 
 	}
 
-	static int[] demanderCoordonnees() {
+	public static int[] demanderCoordonnees() {
 		int[] coordo = new int[2];
 		Scanner sc = new Scanner(System.in);
 		String mess = sc.nextLine();
@@ -55,7 +55,8 @@ public class TourJoueur {
 		if (mess.equals("r")) {
 			return new int[] { new Random().nextInt(10), new Random().nextInt(10) };
 		} else if (mess.equals("yannsecq<3")) {
-			System.out.println(":(");
+			Main.clearTerminal();
+			System.out.println("c'etait un piege :/");
 			System.exit(1);
 		}
 
@@ -69,7 +70,6 @@ public class TourJoueur {
 
 			coordo[1] = mess.charAt(1) - 48;
 
-			// System.out.println("coordonnees valide");
 		} else {
 			System.out.print("Mauvaises coordonnees: reessayez !\n>");
 			demanderCoordonnees();
